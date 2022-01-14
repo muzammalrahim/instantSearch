@@ -345,6 +345,7 @@
     .hit-name h4{
         font-weight: 400;
         font-size: 20px;
+        line-height: 25px;
     }
     .search-bar {
         padding: 80px 0 135px 0;

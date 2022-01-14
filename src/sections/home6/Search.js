@@ -59,7 +59,7 @@ class Search extends Component {
                           <div className='brands-ls'>
                             <h2>Brands</h2>
                             <RefinementList className="brand" attribute="tags" />
-                            <Configure hitsPerPage={8} /> 
+                            <Configure hitsPerPage={9} /> 
                           </div>
                       </div>
                       
