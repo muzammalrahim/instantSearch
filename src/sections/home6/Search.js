@@ -62,11 +62,11 @@ class Search extends Component {
                               className="brand" 
                               attribute="tags" 
                             />
-                            <Configure hitsPerPage={8} /> 
+                            <Configure hitsPerPage={9} /> 
                           </div>
                       </div>
                       
-                      <div className='col-lg-9 col-md-8 col-sm-12'>
+                      <div className='col-lg-9 col-md-9 col-sm-12'>
                         {/* <div className='row'>
                             <div className='col-md-4 col-sm-12'>
                                 <Hits hitComponent={Hit} />
@@ -89,7 +89,6 @@ class Search extends Component {
                         <div className='pagination-rs'>
                             <Pagination 
                                 className="pagination-image"
-                                totalPages={10}
                                 showFirst={false}
                                 translations = {{
                                     previous: `‹ Prev`,
