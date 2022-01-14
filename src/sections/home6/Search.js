@@ -34,8 +34,7 @@ class Search extends Component {
                     <div className='col-md-3 col-sm-12'></div>
                     <div className='col-lg-6 col-md-12 col-sm-12 col-12 w-100'>
                         <div className='search-top w-100'>
-                            <div className=''></div>
-                            <div className=''>
+                            <div className='s-inner'>
                                 <SearchBox 
                                     reset={false}
                                     translations={{
@@ -56,7 +55,7 @@ class Search extends Component {
                   {/* searchcontent */}
                   <div className='row bi-content'>
                       {/* <ClearRefinements /> */}
-                      <div className='col-md-3 col-sm-12'>
+                      <div className='col-lg-3 col-md-4 col-sm-12'>
                           <div className='brands-ls'>
                             <h2>Brands</h2>
                             <RefinementList className="brand" attribute="tags" />
@@ -64,7 +63,7 @@ class Search extends Component {
                           </div>
                       </div>
                       
-                      <div className='col-md-9 col-sm-12'>
+                      <div className='col-lg-9 col-md-8 col-sm-12'>
                         {/* <div className='row'>
                             <div className='col-md-4 col-sm-12'>
                                 <Hits hitComponent={Hit} />
@@ -76,22 +75,31 @@ class Search extends Component {
                       </div>
                   </div>
                   {/* searchcontent */}
-                  <div className='row bi-content'>
-                        <div className='col-md-12'>
-                            <div className='pagination-rs'>
-                                <Pagination 
-                                    className="pagination-image"
-                                    showFirst={false}
-                                    translations = {{
-                                        previous: `‹ Prev`,
-                                        next: 'Next ›',
-                                    }}
-                                />
-                            </div>
-                        </div> 
-                  </div>
+                 
+            </div>
+            
+          </div>
+          <div className="peg-row">
+            <div className='container-fluid'>
+              <div className='row bi-content'>
+                    <div className='col-md-12'>
+                        <div className='pagination-rs'>
+                            <Pagination 
+                                className="pagination-image"
+                                totalPages={10}
+                                showFirst={false}
+                                translations = {{
+                                    previous: `‹ Prev`,
+                                    next: 'Next ›',
+                                }}
+                            />
+                        </div>
+                    </div> 
               </div>
             </div>
+          </div>
+          
+          
             
           {/* <div className="left-panel">
             <ClearRefinements />
