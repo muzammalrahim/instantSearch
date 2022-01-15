@@ -23,6 +23,7 @@ const searchClient = algoliasearch(
 );
 
 class Search extends Component {
+  
   render() {
     return (
       <div className="ais-InstantSearch">
@@ -61,6 +62,12 @@ class Search extends Component {
                             <RefinementList 
                               className="brand" 
                               attribute="tags" 
+                              // showMore={true}
+                              // translations={{
+                              //   showMore: isOpen => {
+                              //     return isOpen ? "Show less" : "Show more";
+                              //   }
+                              // }}
                             />
                             <Configure hitsPerPage={9} /> 
                           </div>
