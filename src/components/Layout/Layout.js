@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import AOS from "aos";
 
-import Header from "../Header";
+// import Header from "../Header";
+import Home6 from "../../pages/home-6"
 import { HeaderMini , HeaderComingSoon } from "../HeaderMini";
 import Footer from "../Footer";
 
@@ -33,7 +33,6 @@ import "../../../node_modules/aos/dist/aos.css";
 import "../../assets/fonts/icon-font/css/style.css";
 import "../../assets/fonts/typography-font/typo.css";
 import "../../assets/fonts/fontawesome-5/css/all.css";
-
 import "../../assets/scss/bootstrap.scss";
 import "../../assets/scss/main.scss";
 
@@ -41,7 +40,7 @@ const Loader = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: #fff;
   z-index: 9999999999;
@@ -130,7 +129,8 @@ const Layout = ({ children, pageContext }) => {
   return (
     <>
       <>
-        <Helmet>
+          <Home6/>
+        {/* <Helmet>
           <title>Finity</title>
           <link rel="icon" type="image/png" href={imgFavicon} />
           <body data-theme={gContext.theme.bodyDark ? "dark" : "light"} />
@@ -145,7 +145,7 @@ const Layout = ({ children, pageContext }) => {
           />
         </div>
 
-        <ModalVideo />
+        <ModalVideo /> */}
       </>
     </>
   );

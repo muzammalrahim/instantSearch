@@ -1,21 +1,48 @@
 import algoliasearch from 'algoliasearch/lite';
 import React, { Component } from 'react';
 import moment from 'moment';
+import SearchBox from './SearchBox';
+import { connectSearchBox } from "react-instantsearch/connectors";
 import {
   InstantSearch,
   Hits,
-  SearchBox,
+  // SearchBox,
   Pagination,
   Highlight,
   ClearRefinements,
   RefinementList,
   Configure,
+  connectStateResults
 } from 'react-instantsearch-dom';
 import PropTypes from 'prop-types';
 // import './App.css';
 export function convertMilliToDate(date) {
   return moment(date).format('MMMM D, YYYY');
 }
+
+const Brands = connectStateResults(
+  ({ searchResults }) =>
+    searchResults && searchResults.nbHits !== 0 ? (
+      <h2>Brands</h2>
+    ) : (
+      null
+    )
+);
+
+const Content = connectStateResults(
+  ({ searchResults }) =>
+    searchResults && searchResults.nbHits !== 0 ? (
+      <Hits hitComponent={Hit} />
+    ) : (
+      <div className='error'>
+          <h4>Create Your Own</h4>
+          <p>Didn't find what you were looking for? Create your own deck.</p>
+          <button>Create</button>
+      </div>
+    )
+);
+
+const DebouncedSearchBox = connectSearchBox(SearchBox);
 
 const searchClient = algoliasearch(
   'CE2M18B8X2',
@@ -36,12 +63,13 @@ class Search extends Component {
                     <div className='col-lg-6 col-md-12 col-sm-12 col-12 w-100'>
                         <div className='search-top w-100'>
                             <div className='s-inner'>
-                                <SearchBox 
+                                {/* <SearchBox 
                                     reset={false}
                                     translations={{
                                         placeholder: 'Search',
                                     }}
-                                />
+                                /> */}
+                                <DebouncedSearchBox delay={1000} />
                             </div>
                         </div> 
                     </div> 
@@ -58,16 +86,11 @@ class Search extends Component {
                       {/* <ClearRefinements /> */}
                       <div className='col-lg-3 col-md-4 col-sm-12'>
                           <div className='brands-ls'>
-                            <h2>Brands</h2>
+                            {/* <h2>Brands</h2> */}
+                            <Brands/>
                             <RefinementList 
                               className="brand" 
                               attribute="tags" 
-                              // showMore={true}
-                              // translations={{
-                              //   showMore: isOpen => {
-                              //     return isOpen ? "Show less" : "Show more";
-                              //   }
-                              // }}
                             />
                             <Configure hitsPerPage={9} /> 
                           </div>
@@ -80,7 +103,8 @@ class Search extends Component {
                             </div> 
                         </div> */}
                         <div className='content-rs'>
-                            <Hits hitComponent={Hit} />
+                            {/* <Hits hitComponent={Hit} /> */}
+                            <Content/>
                         </div>
                       </div>
                   </div>

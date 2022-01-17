@@ -10,7 +10,7 @@ import Content3 from "../sections/home6/Content3";
 import Screenshots from "../sections/home6/Screenshots";
 import Testimonial from "../sections/home6/Testimonial";
 import Promo from "../sections/home6/Promo";
-
+import Header from "../sections/home6/Header"
 const Home6 = () => {
   return (
     <>
@@ -27,6 +27,7 @@ const Home6 = () => {
           footerStyle: "style6",
         }}
       >
+        <Header/>
         <Hero className="position-relative pt-25 pt-md-31 pt-lg-35 pb-14 pb-md-19 pb-lg-33 position-relative overflow-hidden" />
         {/* <Cta className="bg-purple-heart py-10" /> */}
         <Search/>
